@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Odin-Calculator</title>
 </head>
 <body>
-    
+    <div class="calculator">
+        <div class="numpad">
+            <button type="button" onclick="modifyText(1)">1</button>
+            <button type="button" onclick="modifyText(2)">2</button>
+            <button type="button" onclick="modifyText(3)">3</button>
+            <button type="button" onclick="modifyText(4)">4</button>
+            <button type="button" onclick="modifyText(5)">5</button>
+            <button type="button" onclick="modifyText(6)">6</button>
+            <button type="button" onclick="modifyText(7)">7</button>
+            <button type="button" onclick="modifyText(8)">8</button>
+            <button type="button" onclick="modifyText(9)">9</button>
+            <button type="button" onclick="modifyText(0)">0</button>
+        </div>
+
+        <div class="operator">
+            <button type="button" onclick="modifyText('+')">+</button>
+            <button type="button" onclick="modifyText('-')">-</button>
+            <button type="button" onclick="modifyText('*')">*</button>
+            <button type="button" onclick="modifyText('/')">/</button>
+
+            <button type="button" onclick="calculateResult()">=</button>
+            <button type="button" onclick="clearResult()">Clear</button>
+        </div>
+    </div>
+
+    <div class="display">
+        Display Numbers
+        <div class="text"></div>
+    </div>
+
+
+
     <script src="calculator.js"></script>
 </body>
 </html>
