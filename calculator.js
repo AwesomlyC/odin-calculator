@@ -24,9 +24,13 @@ function multiply(num1, num2){
 function divide(num1, num2){
 
     if (num2 === 0){
-        return "undefine"  // undefine
+        return "Divison by zero is undefined"  // undefine
     }
     return num1 / num2;
+}
+
+function modulo(num1, num2){
+    return num1 % num2;
 }
 
 function operate(num1, operator, num2){
@@ -43,17 +47,21 @@ function operate(num1, operator, num2){
             result = multiply(num1, num2);
             break;
         case "/":
-            result = divide(num1, num2);
+            result = Math.round(divide(num1, num2)*100,3)   /100;
             break;
+        case "%":
+            result = modulo(num1, num2);
     }
     return result;
 }
 
 function modifyText(value){
     let display = document.querySelector(".text");
-    // let currentText = display.textContent;
+    if (display.textContent === "NaN"){
+        display.textContent = "";
+    }
 
-    if (value === "+" || value === "-" || value === "*" || value === "/"){
+    if (value === "+" || value === "-" || value === "*" || value === "/" || value === "%"){
         if (operator !== ""){
             calculateResult();
         }
@@ -70,10 +78,13 @@ function calculateResult(){
     console.log("The operator to be used is ... " + operator)
 
     let parsedText = text.split(operator);
-    result = operate(parseInt(parsedText[0]), operator, parseInt(parsedText[1]));
+    console.log(parsedText);
+    result = operate(parseFloat(parsedText[0]), operator, parseFloat(parsedText[1]));
 
     display.textContent = result;
-    operator="";
+    operator = "";
+    num1 = 0;
+    num2 = 0;
 
 }
 

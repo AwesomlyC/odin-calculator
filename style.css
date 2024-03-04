@@ -1,0 +1,38 @@
+.calculator{
+    width: 140px;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    border: 2px solid gray
+}
+body{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: lightblue;
+}
+
+.numpad{
+    display: flex;
+    flex-wrap: wrap;
+}
+.text {
+    background-color: white;
+    
+    width: 138px;
+    height: 30px;
+    text-align: right;
+    font-size: 1.5em;
+    border: 1px solid black;
+    border-bottom: 3px solid black
+}
+button{
+    width:35px;
+    height:35px;
+    border: 1px solid black
+}
+#zero{
+    width:70px;
+}
